@@ -56,10 +56,7 @@ RUN npm run build
 #      (normalmente 10000). Apache, por defecto, escucha en el puerto 80
 #      fijo — si no se reconfigura, Render no detecta el puerto y el
 #      deploy falla o queda inestable. Esto SÍ había que arreglarlo.
-#    - migrate:fresh --seed se mantiene tal cual lo tenías: cada deploy
-#      resetea la base y la puebla de nuevo con los seeders. Eso es
-#      intencional en este proyecto (demo/ambiente de pruebas), así que
-#      no se toca esa parte.
+#    - Ejecuta solo migraciones pendientes; no borra datos ni carga seeders.
 RUN { \
         echo '#!/bin/sh'; \
         echo 'set -e'; \
