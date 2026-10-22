@@ -4,9 +4,9 @@
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Gestor de Ventas y Control de Planilla de sueldos" />
+        <meta name="description" content="Plataforma de administración de condominios: personal, cuotas, visitas y mantenimiento" />
         <meta name="author" content="Grupo 3" />
-        <title>Condominio San Diego - @yield('title')</title>
+        <title>Condominio SA - @yield('title')</title>
         
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
         <link href="{{ asset('css/plantilla.css') }}" rel="stylesheet" /> 
