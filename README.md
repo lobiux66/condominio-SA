@@ -1,53 +1,54 @@
-# PROYECTO API
+# Condominio SA
 
-1. Clonar el proyecto
-2. Instalar las dependencias
+Sistema web de administración de condominios construido con Laravel 11, PHP 8.2 y Vite.
 
-```
-composer install
-```
+## Objetivo de esta rama
 
-3. Configurar las variables de entorno tomando la plantilla `.env.example` y clonar a un archivo `.env`
-   configurarlo de preferencia MySql
-4. Cambiar las variables de entorno
-5. Generar la llave
+Preparar una primera versión demostrable para administradores y personal del condominio. La interfaz reúne los módulos existentes; cada flujo debe validarse antes de ofrecerlo como sistema de producción.
 
-```
-php artisan key:generate
-```
+## Requisitos
 
-5. Configurar el .env a la base de datos ya sea MySql o la uses
+- PHP 8.2 o superior y Composer
+- Node.js y npm
+- PostgreSQL (configuración sugerida) o una base compatible con la configuración de Laravel
 
-6. Ejecutar las migraciones
+## Instalación local
 
-```
-php artisan migrate
-```
+1. Clona el repositorio y entra en la carpeta:
+   `git clone https://github.com/lobiux66/condominio-SA.git`
+2. Instala dependencias:
+   `composer install`
+3. Copia `.env.example` a `.env` y configura la base de datos:
+   `cp .env.example .env`
+4. Genera la clave de la aplicación:
+   `php artisan key:generate`
+5. Crea la base de datos vacía y ejecuta las migraciones:
+   `php artisan migrate`
+6. Instala y compila los recursos:
+   `npm install`
+   `npm run build`
+7. Inicia el servidor:
+   `php artisan serve`
+8. Abre `http://127.0.0.1:8000`.
 
-```
-php artisan migrate:fresh --seed
-```
+## Datos de demostración
 
-7. Instalar los modulos de node
+El proyecto incluye seeders en `database/seeders`. Antes de ejecutar `php artisan db:seed`, revisa su contenido y usa únicamente una base de datos local desechable. Algunos seeders crean cuentas de prueba y datos relacionados; no reutilices esas credenciales en un servidor público.
 
-```
-npm install
-```
+**Importante:** `php artisan migrate:fresh --seed` elimina todas las tablas y vuelve a crearlas. No lo ejecutes sobre una base de datos con información real. Para despliegues normales se usa `php artisan migrate --force`, que no borra las tablas existentes.
 
-8. Construir la app
+## Despliegue con Docker
 
-```
-npm run build
-```
+El `Dockerfile` prepara Apache, PHP, las dependencias y los recursos de frontend. Configura en el proveedor las variables de entorno reales (`APP_KEY`, conexión de base de datos y `APP_DEBUG=false`) antes de publicar. El contenedor ejecuta migraciones pendientes al arrancar; no carga automáticamente seeders ni restablece la base de datos.
 
-```
+## Estado de la versión
 
-9. Correr la app
+- [x] Primera renovación visual del panel principal y búsqueda de módulos.
+- [x] Archivo de variables de entorno de ejemplo.
+- [x] Arranque Docker sin reiniciar/borrar los datos en cada despliegue.
+- [ ] Ejecutar pruebas automáticas y pruebas manuales de cada módulo.
+- [ ] Verificar permisos de administrador y personal.
+- [ ] Cargar datos ficticios revisados para una demo aislada.
+- [ ] Publicar en hosting y configurar dominio/HTTPS.
 
-```
-
-php artisan serve
-
-```
-
-```
+Esta versión es una base de demostración en preparación, no una certificación de seguridad ni de funcionamiento completo.
