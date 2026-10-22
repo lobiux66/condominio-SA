@@ -40,7 +40,7 @@
             </div>
             <div class="d-flex flex-wrap gap-2">
                 <span class="sa-pill"><i class="fa-solid fa-shield-halved"></i> Panel administrativo</span>
-                <span class="sa-pill"><i class="fa-solid fa-laptop-mobile"></i> Adaptable a móvil</span>
+                <span class="sa-pill"><i class="fa-solid fa-mobile-screen-button"></i> Adaptable a móvil</span>
             </div>
         </div>
     </section>
